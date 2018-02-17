@@ -1,2 +1,2 @@
 # ilp-plugin-venmo
-An LPIv2 compliant ILP plugin for venmo
+A LPIv2 compliant ILP plugin for Venmo.
