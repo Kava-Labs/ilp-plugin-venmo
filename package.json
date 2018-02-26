@@ -1,0 +1,22 @@
+{
+  "name": "ilp-plugin-venmo",
+  "version": "0.1.0",
+  "description": "An ILP plugin for venmo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kava-Labs/ilp-plugin-venmo.git"
+  },
+  "author": "Kava Labs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kava-Labs/ilp-plugin-venmo/issues"
+  },
+  "homepage": "https://github.com/Kava-Labs/ilp-plugin-venmo#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
