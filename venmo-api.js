@@ -9,6 +9,7 @@ Nice tutorial on unreliability of the wait() function https://medium.freecodecam
 */
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
+const Chrome = require('selenium-webdriver/chrome');
 
 class VenmoAPI {
 	constructor(username, password) {
@@ -27,8 +28,17 @@ class VenmoAPI {
 		this.lastLogInTime = Date.now()
 	}
 	
-	async connect() {
-		this.driver = await new Builder().forBrowser('chrome').build();
+	async connect(headless=true) {
+		let options = new Chrome.Options()
+		if (headless) {
+			options = options.headless().windowSize({width: 640, height: 480})
+		}
+		
+		this.driver = await new Builder()
+			.forBrowser('chrome')
+			.setChromeOptions(options)
+			.build();
+		
 		await this.login()
 	}
 	
