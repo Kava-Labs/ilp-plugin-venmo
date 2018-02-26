@@ -50,7 +50,7 @@ class VenmoAPI {
 		// Select to pay them.
 		await this.driver.findElement(By.id('onebox_pay_toggle')).click() // using selenium promise manager thing
 		// Enter the payment amount.
-		await this.driver.findElement(By.id('onebox_details')).sendKeys(amount.toString() + ' ' + this.paymentMessage) // needs space to trigger the entry of 'for'
+		await this.driver.findElement(By.id('onebox_details')).sendKeys(amount.toString() + ' ' + paymentMessage) // needs space to trigger the entry of 'for'
 		// Send the payment
 		await this.driver.findElement(By.id('onebox_send_button')).click()
 		// If the user has not been 
