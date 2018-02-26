@@ -10,6 +10,11 @@ Nice tutorial on unreliability of the wait() function https://medium.freecodecam
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
 const Chrome = require('selenium-webdriver/chrome');
+var path = require('chromedriver').path;
+
+var service = new Chrome.ServiceBuilder(path).build();
+Chrome.setDefaultService(service);
+
 
 class VenmoAPI {
 	constructor(username, password) {
@@ -59,9 +64,12 @@ class VenmoAPI {
 	async getBalance() {
 		await this.ensureLoggedIn()
 		// Load main account page.
-		await this.driver.get('http://venmo.com')
+		// await this.driver.get('http://venmo.com')
 		// Extract balance info
-		let balanceString = await this.driver.findElement(By.id('balance_right_side')).getText()
+		let balanceString = await this.driver.wait(
+			until.elementLocated(By.id('balance_right_side')), 20000
+			)
+		balanceString = await balanceString.getText()
 		// Drop initial $ sign. TODO check text matches pattern.
 		return parseFloat(balanceString.slice(1))
 	}

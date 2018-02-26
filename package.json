@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Kava-Labs/ilp-plugin-venmo#readme",
   "dependencies": {
+    "chromedriver": "^2.35.0",
     "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
