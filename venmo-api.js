@@ -47,8 +47,7 @@ class VenmoAPI {
 		await this.login()
 	}
 	
-	async sendMoney(destinationUsername, amount) {
-		const paymentMessage = 'an ILP transfer by Kava Konnector.'
+	async sendMoney(destinationUsername, amount, paymentMessage) {
 		await this.ensureLoggedIn()
 		// Load the peer's venmo page
 		await this.driver.get(`http://venmo.com/${destinationUsername}`);
